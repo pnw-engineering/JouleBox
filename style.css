@@ -1,0 +1,271 @@
+:root {
+  --PrimaryTextColor: hsl(239, 100%, 21%);
+  --HeaderBackground: hsl(114, 88%, 77%);
+  --highlightText: hsl(183, 81%, 35%);
+  --highlight: hsl(239, 100%, 21%);
+  --HeaderText: hsl(103, 93%, 17%);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  padding: 0;
+  border: 0;
+  /* font: inherit; */
+  vertical-align: baseline;
+}
+
+body {
+  display: grid;
+  height: 100dvh;
+  grid-template-rows: 4em 1fr 3em;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 auto;
+}
+
+li {
+  list-style: none;
+  /* line-height: 3rem; */
+  & a {
+    text-decoration: underline;
+    color: inherit;
+  }
+}
+
+main {
+  /* display: grid; */
+  /* grid-template-rows: 4em 4em 1fr 6em; */
+  position: relative;
+  /* flex-wrap: wrap; */
+  /* margin: 0 auto; */
+  /* margin-top: 0.5rem; */
+  gap: 1ch;
+  height: 100%;
+  /* border: 2px solid red; */
+
+  &::before {
+    content: "";
+    z-index: -1;
+    background-image: url("3d-rendering-house-model_23-2150799745.avif");
+    opacity: 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+  }
+}
+
+.cardDeck {
+  display: grid;
+  width: min(90%, 70em);
+  gap: 1em;
+  margin: 0 auto;
+  margin-top: 1em;
+  grid-template-rows: 2em repeat(3, 1fr);
+  /* border: 1px solid red; */
+
+  & h2 {
+    grid-row: 1;
+    /* margin: 0; */
+  }
+}
+
+.heading,
+.subheading {
+  color: var(--PrimaryTextColor);
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 0.5em;
+  box-shadow: 0 0 10px 0 var(--HeaderText);
+}
+
+.heading {
+  width: 80%;
+  font-size: 1.5em;
+  background-color: var(--HeaderBackground);
+  margin-top: 0.5em;
+}
+
+.subheading {
+  width: 50%;
+  /* font-size: 1em; */
+  background-color: var(--HeaderBackground);
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  display: grid;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  grid-template-columns: 5em 1fr 5em;
+  background-color: var(--HeaderBackground);
+  border-bottom: 2px solid var(--HeaderText);
+  & h1 {
+    grid-column: 2;
+    color: var(--PrimaryTextColor);
+    font-family: "Dancing Script", cursive;
+    font-weight: 700;
+    font-size: 3rem;
+    /* border: 2px solid green; */
+  }
+}
+
+header img {
+  height: 3rem;
+  align-self: center;
+  padding-inline: 1rem;
+  /* border: 2px solid blue; */
+}
+
+.nav {
+  margin: 0 auto;
+  display: flex;
+  gap: 1em;
+  list-style: none;
+  /* border: 2px solid red; */
+  & a {
+    text-decoration: none;
+    color: var(--PrimaryTextColor);
+    font-size: 1.5rem;
+
+    &:hover {
+      font-weight: bold;
+      color: var(--highlightText);
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* grid-template-rows: 8em 6em 1fr 4em; */
+  /* flex-direction: column; */
+  gap: 0.5em;
+  /* margin: 0 auto; */
+  /* margin-top: 2em; */
+  z-index: 1;
+  /* max-width: min(100%, 50em); */
+  height: 100%;
+
+  & img {
+    width: min(90%, 30em);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    flex-basis: 60%;
+    object-fit: fill;
+    /* width: auto; */
+    aspect-ratio: 2 / 1;
+    /* border-radius: 0.5rem; */
+  }
+  & button {
+    align-self: center;
+    margin: 0 auto;
+    background-color: var(--HeaderBackground);
+    font-size: 2em;
+    font-weight: bold;
+    padding-block: 0.25em;
+    padding-inline: 0.5em;
+    color: var(--PrimaryTextColor);
+    border: 1px solid var(--HeaderBackground);
+    border-radius: 1em;
+    margin-bottom: 1em;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--HeaderBackground);
+      background-color: var(--highlight);
+      border: none;
+      box-shadow: 0 0 10px 0 var(--HeaderText);
+    }
+  }
+}
+
+.backgroundImage {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.card {
+  margin: 0.5ch auto;
+  margin-bottom: 0;
+  width: min(70em, 90%);
+  padding: 5px;
+  box-shadow: 0 0 10px 0 var(--HeaderText);
+  background-color: var(--HeaderBackground);
+  color: var(--PrimaryTextColor);
+  /* padding: 1rem; */
+  border-radius: 0.5rem;
+  /* border: 2px solid green; */
+
+  & h2 {
+    font-size: 1.2rem;
+    /* color: black; */
+  }
+}
+
+.bioCard {
+  box-shadow: 0 0 10px 0 var(--HeaderText);
+  background-color: var(--HeaderBackground);
+  color: var(--PrimaryTextColor);
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-areas:
+    "img name"
+    "img bio";
+  grid-template-columns: 8em 1fr;
+  grid-template-rows: 2em 1fr;
+  & img {
+    grid-area: img;
+    max-width: 100%;
+    border: 1px solid red;
+  }
+
+  & h2 {
+    grid-area: name;
+  }
+  & p {
+    grid-area: bio;
+    padding: 0.5em;
+  }
+}
+
+footer {
+  display: flex;
+  /* height: 2rem; */
+  background-color: var(--HeaderBackground);
+  color: var(--PrimaryTextColor);
+  overflow-x: hidden;
+
+  /* & img {
+    max-height: 100%;
+    aspect-ratio: 1;
+    margin: 0 auto;
+  } */
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 16px;
+  }
+}
