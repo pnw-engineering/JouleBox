@@ -117,6 +117,7 @@ header {
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
+  overflow-y: hidden;
   grid-template-columns: 5em 1fr 5em;
   background-color: var(--HeaderBackground);
   border-bottom: 2px solid var(--HeaderText);
@@ -131,9 +132,10 @@ header {
 }
 
 header img {
-  height: 3rem;
-  align-self: center;
-  padding-inline: 1rem;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  /* align-self: center; */
+  /* padding-inline: 1rem; */
   /* border: 2px solid blue; */
 }
 
