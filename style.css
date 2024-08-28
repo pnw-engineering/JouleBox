@@ -23,7 +23,7 @@
 body {
   display: grid;
   height: 100dvh;
-  grid-template-rows: 4em 1fr 3em;
+  grid-template-rows: 10em 1fr 3em;
 }
 
 h1,
@@ -84,25 +84,26 @@ main {
   }
 }
 
-.heading,
-.subheading {
-  color: var(--PrimaryTextColor);
-  margin: 0 auto;
-  text-align: center;
-  border-radius: 0.5em;
-  box-shadow: 0 0 10px 0 var(--HeaderText);
-}
-
 .heading {
-  width: 80%;
-  font-size: 1.5em;
-  background-color: var(--HeaderBackground);
-  margin-top: 0.5em;
+  /* width: 80%; */
+  margin: 0 auto;
+  grid-column: 2;
+  font-size: 1.25em;
+  color: var(--PrimaryTextColor);
+  /* background-color: var(--HeaderBackground); */
+  /* margin-top: 0.5em; */
 }
 
 .subheading {
-  width: 50%;
-  /* font-size: 1em; */
+  /* max-width: 50%; */
+  width: fit-content;
+  border-radius: 0.5em;
+  text-align: center;
+  font-size: 1em;
+  margin-top: 1em;
+  padding: 0.5em;
+  color: var(--PrimaryTextColor);
+  box-shadow: 0 0 10px 0 var(--HeaderText);
   background-color: var(--HeaderBackground);
 }
 
@@ -112,31 +113,30 @@ img {
 
 header {
   display: grid;
+  align-items: center;
   position: sticky;
   top: 0;
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
   overflow-y: hidden;
-  grid-template-columns: 5em 1fr 5em;
+  grid-template-columns: 10em 1fr;
+  grid-template-rows: 1fr 1fr;
+  color: var(--PrimaryTextColor);
   background-color: var(--HeaderBackground);
   border-bottom: 2px solid var(--HeaderText);
   & h1 {
     grid-column: 2;
-    color: var(--PrimaryTextColor);
+    grid-row: 1;
     font-family: "Dancing Script", cursive;
     font-weight: 700;
     font-size: 3rem;
-    /* border: 2px solid green; */
   }
-}
 
-header img {
-  height: 100%;
-  aspect-ratio: 1 / 1;
-  /* align-self: center; */
-  /* padding-inline: 1rem; */
-  /* border: 2px solid blue; */
+  & img {
+    max-height: 100%;
+    grid-row: span 2;
+  }
 }
 
 .nav {
